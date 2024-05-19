@@ -44,6 +44,7 @@ From the above characteristic table, we can directly write the next state equati
 **PROGRAM**
 
 **Developed by : M NIKHIL**
+
 **RegisterNumber:212222230095**
 ```
 module t_flipflop(t,rst, clk,qp, qbar); input t,rst, clk;
