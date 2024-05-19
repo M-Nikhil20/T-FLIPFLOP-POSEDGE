@@ -1,4 +1,7 @@
-# T-FLIPFLOP-POSEDGE
+## EX-9 <p align="center"><b>  T-FLIPFLOP-POSEDGE </b>    
+
+**DATE:**
+
 
 **AIM:**
 
@@ -28,15 +31,39 @@ From the above characteristic table, we can directly write the next state equati
 
 **Procedure**
 
-/* write all the steps invloved */
+
+1.Define Module: Define a Verilog module for the T flip-flop with inputs (T, CLK) and outputs (Q, Q_bar).
+2.Declare Inputs and Outputs: Declare input and output ports for the module.
+3.Implement Flip-Flop Logic: Write Verilog code to implement the T flip-flop logic based on its functional table. Use a synchronous always @(posedge CLK) block to trigger the flip-flop on the positive edge of the clock signal.
+4.Simulate Using Testbench: Write a Verilog testbench to simulate the behavior of the T flip-flop under different input conditions.
+5.Apply Input Stimuli: In the testbench, apply various combinations of input stimuli (T, CLK) to cover all possible input states.
+6.Verify Output Behavior: Verify that the output behavior of the T flip-flop matches the expected behavior defined by its functional table.
+7.Check for Race Conditions: Ensure that there are no race conditions or undefined states in the design by analyzing the timing and sequence of input changes.
+
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+**Developed by : M NIKHIL**
+**RegisterNumber:212222230095**
+```
+module t_flipflop(t,rst, clk,qp, qbar); input t,rst, clk;
+output qp, qbar; wire q;
+reg qp;
+always @ (posedge clk) if (rst)
+qp=0; else
+qp = q ^ t; assign qbar = ~ qp;
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![t rtl](https://github.com/roshinithangachamy/T-FLIPFLOP-POSEDGE/assets/147118341/87682dd0-0b0c-470c-82f0-03bd6b9aacae)
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![t wavrform](https://github.com/roshinithangachamy/T-FLIPFLOP-POSEDGE/assets/147118341/09c4fbca-2406-4170-b212-b6358400ec02)
+
 **RESULTS**
+
+Hence, T flipflop using verilog and validating their functionality using their functional tables is implemented.
+
